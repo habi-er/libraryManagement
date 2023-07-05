@@ -16,7 +16,8 @@ const BookForm = () => {
   const onSubmit = e => {
     e.preventDefault();
     if (authed) {
-      if (!genre || !author || !bookcode || !title) return;
+      if (!newBook.genre || !newBook.author || !newBook.bookcode || !newBook.title)
+        return alert("책 정보를 입력해주세요.");
       onAdd(newBook);
       setNewBook({ genre: "", title: "", author: "", bookcode: "" });
       navigate("/");

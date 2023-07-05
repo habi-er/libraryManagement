@@ -234,6 +234,7 @@ export const BookListContainer = styled.div`
           outline: none;
           border: none;
           color: limegreen;
+          cursor: pointer;
           i {
             font-size: 25px;
           }
@@ -281,4 +282,18 @@ export const WarningContainer = styled.div`
     }
   }
 `;
-export const FooterContainer = styled.footer``;
+export const FooterContainer = styled.footer`
+  height: 300px;
+  width: 100%;
+  background-color: green;
+  box-sizing: border-box;
+
+  h2 {
+    color: #fff;
+    font-size: 42px;
+    font-weight: 700;
+    text-align: center;
+    box-sizing: border-box;
+    line-height: 300px;
+  }
+`;

@@ -38,13 +38,14 @@ export const useBook = () => useContext(BookContext);
 const BookProvider = ({ children }) => {
   const [state, dispatch] = useReducer(BookReducer, initialState);
   const { data, text } = state;
-  const no = useRef(data.length + 1);
-
+  const no = JSON.parse(localStorage.getItem("no")) || useRef(data.length + 1);
   useEffect(() => {
     localStorage.setItem("data", JSON.stringify(data));
+    localStorage.setItem("no", JSON.stringify(no));
   });
   const onAdd = item => {
     dispatch({ type: "ADD", book: { ...item, id: no.current++ } });
+    localStorage.setItem("no", JSON.stringify(no));
   };
   const onDel = id => {
     dispatch({ type: "DEL", id });
