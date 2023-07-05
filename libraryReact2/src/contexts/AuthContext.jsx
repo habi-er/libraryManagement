@@ -12,14 +12,14 @@ export const AuthProvider = ({ children }) => {
       id: "a1",
       email,
     };
-    localStorage.setItem("user", JSON.stringify(logUser));
+    localStorage.setItem("bookUser", JSON.stringify(logUser));
     if (password === "1234") {
       setUser(logUser);
       navigate("/");
     }
   };
   const logout = () => {
-    localStorage.removeItem("user");
+    localStorage.removeItem("bookUser");
     setUser(null);
     navigate("/login");
   };
